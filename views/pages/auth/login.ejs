@@ -1,0 +1,22 @@
+<%- include('../head') %>
+    <% if(locals.flash && locals.flash.error){ %>
+        <div class="ui negative message ">
+            <%= flash.error %>
+        </div>
+        <% } %>
+            <form action="/login" method="post" class="ui form">
+                <div class="field">
+                    <input type="email" name="email" id="email" placeholder="email">
+                </div>
+                <div class="field">
+                    <input type="password" name="password" id="password" placeholder="Mots de Passe">
+                </div>
+                <button type="submit" class="ui blue labeled submit  icon button">
+                    connexion
+                    <i class="icon send "></i>
+                </button>
+
+            </form>
+
+
+            <%- include('../foot') %>

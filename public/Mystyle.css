@@ -1,0 +1,20 @@
+
+.bla{
+    width: 50%;
+    background: #f9f9f9;
+    margin: auto;
+    border: solid red 2px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px black;
+    margin-bottom: 10px;
+}
+.headMessage{
+    color: #ff22ee;
+    font-size: 20px;
+}
+.bodyMessage{
+    font-size: 15px;
+}
+.footMessage{
+    display: flex;
+}

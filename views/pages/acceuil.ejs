@@ -1,0 +1,35 @@
+<%- include('head') %>
+
+
+
+<% if(locals.user && locals.user.email) {%>
+    <form action="/newPost" method="post" class="  ui placeholder segment">
+        <textarea name="newPost" id="newPost" ></textarea>
+        <button type="submit"> <i class="icon send"></i>SEND</button>
+    </form>
+<% } else {%>
+<p><a href="/login">Connetez vous </a> pous postez vos propre message, commentez et like plein d'autre </p>
+<% } %>
+<!-- les publication -->
+
+<% if(locals.posts){ %>
+    ddd
+    <% for(post of posts){%>
+        <div class="bla">
+            <div class="headMessage">
+                <h2> <a href="profil/<%= post.author.id %>">  <%= post.author.name %></a> </h2>
+            </div>
+            <div class="bodyMessage">
+                <p> <%= post.message %> </p>
+            </div>
+            <div class=" footMessage">
+                <div> <a href="like/<%= post._id%>" ><i class="icon like">   </i>   <%= post.like%> </a> </div>
+                <div> <a href=""><i class="icon sell">  </i>  <%= post.unlikes%> </a> </div>
+                <div> <a href=""><i class="icon plus">voir </i>  </div>
+            </div>
+        </div>
+    <% } %>
+<% } %>
+
+
+<%- include('foot') %>

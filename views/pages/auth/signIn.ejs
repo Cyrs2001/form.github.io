@@ -1,0 +1,52 @@
+<%- include('../head') %>
+<% if(locals.flash && locals.flash.error){ %>
+    <div class="ui negative message "> <%- flash.error %> </div>
+    <% } %>
+
+<% if(locals.flash && locals.flash.succes){ %>
+    <div class="ui positive message "> <%= flash.succes %> <p>veuillez vous </p> <a href="/login">connectez-ici</a> </div>
+    <% } %>
+
+    <form action="/signin" method="post" class="ui form">
+        <div class="field">
+            <input type="email" name="email" id="email" placeholder="Email"  required >
+        </div>
+        <div class="field">
+            <input type="password" name="password" id="password" placeholder="Mots de Passe"  required >
+        </div>
+        <div class="field">
+            <input type="password" name="Repassword" id="Repassword" placeholder="Retaper votre mots de passe" >
+        </div>
+        <div class="message_error" style="visibility: hidden;">
+           <p class="ui red">
+            les mots de passe ne correspondent pas
+           </p>
+        </div>
+        <button type="submit" class="ui blue labeled submit  icon button">
+            <!-- disabled> -->
+            Inscription
+            <i class="icon send "></i>
+             </button>
+    </form>
+
+<!-- <script>
+    let passwordArray = document.querySelectorAll('input[type= "password"]');
+    let submit = document.querySelector('[type = "submit"]');
+    let mes = document.querySelector('.message_error');
+
+    for(let password of passwordArray){
+        password.addEventListener('input', (event)=>{
+            if((passwordArray[0].value == passwordArray[1].value)  && (passwordArray[0].value != '') && (passwordArray[1].value != '')) {
+                submit.removeAttribute('disabled');
+               mes.style="visibility: hidden;"
+                
+            }else{
+                submit.setAttribute('disabled', 'disabled');
+                mes.style="visibility: visible;"
+            }
+        })
+    }
+</script> -->
+
+
+<%- include('../foot') %>

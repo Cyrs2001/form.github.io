@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/semantic/semantic.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/Mystyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ui inverted menu">
+        <a href="/" class="header item">Acceuil</a>
+        <% if( (locals.user && locals.user.email)){ %>
+            <div class=" header item"> <a href="../profil/<%= user._id %>"> <%= user.email %></a></div>
+            <div class=" header item"> <a href="/logout" class=" header item">Deconnexion dd</a></div>
+            
+            <% }else { %>
+               >
+            <a href="/login" class=" header item">Connexion</a>
+            <% } %>
+        
+        <a href="/signin" class=" header item">Inscription</a>
+    </div> 
+    
